@@ -1,7 +1,9 @@
 # This file define common behavior of the chart snapshots in the test directory.
 dynamicFields:
-  - apiVersion: apps/v1
-    kind: Deployment
-    name: chartsnap-app1
+  - apiVersion: v1
+    kind: Secret
+    name: app1-cert
     jsonPath:
-      - /spec/template/spec/containers/0/image
+      - /data/ca.crt
+      - /data/tls.crt
+      - /data/tls.key
